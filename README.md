@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+##🤖 Introduction
+A Next.js 15 platform where entrepreneurs can submit their startup ideas for virtual pitch competitions, browse other pitches, and gain exposure through a clean minimalistic design for a smooth user experience.
 
-## Getting Started
+##🔋 Features
+👉 Live Content API: Displays the latest startup ideas dynamically on the homepage using Sanity's Content API.
 
-First, run the development server:
+👉 GitHub Authentication: Allows users to log in easily using their GitHub account.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+👉 Pitch Submission: Users can submit startup ideas, including title, description, category, and multimedia links ( image or video).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+👉 View Pitches: Browse through submitted ideas with filtering options by category.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+👉 Pitch Details Page: Click on any pitch to view its details, with multimedia and description displayed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+👉 Profile Page: Users can view the list of pitches they've submitted.
 
-## Learn More
+👉 Editor Picks: Admins can highlight top startup ideas using the "Editor Picks" feature managed via Sanity Studio.
 
-To learn more about Next.js, take a look at the following resources:
+👉 Views Counter: Tracks the number of views for each pitch instead of an upvote system.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+👉 Search: Search functionality to load and view pitches efficiently.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+👉 Minimalistic Design: Fresh and simple UI with only the essential pages for ease of use and a clean aesthetic.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+and many more, including the latest React 19, Next.js 15 and Sanity features alongside code architecture and reusability
