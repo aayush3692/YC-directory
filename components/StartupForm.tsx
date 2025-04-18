@@ -8,12 +8,13 @@ import { Send } from 'lucide-react';
 import { formSchema } from '@/lib/validation';
 import { z } from 'zod';
 import { toast } from 'sonner';
+
+
 import { useRouter } from 'next/navigation';
+import { createPitch } from '@/lib/actions';
 const StartupForm = () => {
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [pitch, setPitch] = useState("");
-
-    // const {toast} = useToast();
 
     const router = useRouter();
 
@@ -29,21 +30,16 @@ const StartupForm = () => {
             await formSchema.parseAsync(formValues);
             console.log(formValues)
 
-            // const results = await createIdea(prevState, formData, pitch)l
+            const result = await createPitch(prevState, formData, pitch)
 
-            // console.log(results);
+            console.log(result);
 
-            // if(result.status == 'SUCCESS') {
-            //     toast ({
-            //         title:'Success',
-            //         description: 'Your startup has been created.'
-            //     })
+            if(result.status == 'SUCCESS') {
+                toast ('Your startup has been created.')
 
-            
-
-            // router.push(`/startup/${result.id}`);
-            // }
-            // return result;
+                router.push(`/startup/${result._id}`);
+            }
+            return result;
 
         } catch (error) {
             if(error instanceof z.ZodError) {
@@ -51,19 +47,11 @@ const StartupForm = () => {
 
                 setErrors(fieldErrors as unknown as Record<string, string>);
 
-                toast({
-                    title: 'Error',
-                    description: 'Please check your inputs',
-                    variant: 'destructive'
-                })
+                toast('Please check your inputs')
                 return {...prevState, error: "Validation failed", status: 'ERROR'}
             }
 
-            toast({
-                title: 'Error',
-                description: 'Please check your inputs',
-                variant: 'destructive'
-            })
+            toast('Please check your inputs')
             return {
                 ...prevState,
                 error: "Something went wrong",
